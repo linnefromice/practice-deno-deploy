@@ -4,7 +4,8 @@ function handleRequest(request) {
   // Respond with HTML
   if (pathname.startsWith("/html")) {
     const html = `<html>
-      <p><b>Message:</b> Hello from Deno Deploy.</p>
+      <p>Hello from Deno Deploy.</p>
+      <p>@linnefromice</p>
       </html>`;
 
     return new Response(html, {
@@ -22,6 +23,7 @@ function handleRequest(request) {
     // Use stringify function to convert javascript object to JSON string.
     const json = JSON.stringify({
       message: "Hello from Deno Deploy",
+      author: "@linnefromice"
     });
 
     return new Response(json, {
